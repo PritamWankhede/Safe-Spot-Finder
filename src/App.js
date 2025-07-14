@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import LiveLocationTracker from './Components/LiveLocationTracker';
+import NetworkStatusChecker from './Components/NetworkStatusChecker';
+import IdleMonitor from './Components/IdleMonitor';
+import LazyLoadTips from './Components/LazyLoadTips';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+      <div className="w-full max-w-xl p-6 bg-white rounded-lg shadow-lg">
+        <h1 className="text-3xl font-bold text-center text-indigo-700 mb-6">
+          🚨 Safe Spot Finder
+        </h1>
+        <LiveLocationTracker />
+        <NetworkStatusChecker />
+        <IdleMonitor/>
+        <LazyLoadTips/>
+      </div>
     </div>
   );
 }
